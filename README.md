@@ -1,2 +1,0 @@
-# Aux-lioIpa
-AuxílioBarbozaStore
