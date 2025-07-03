@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>SCRIPT BY @Barboza Store</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 20px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 400px;
+      background: linear-gradient(135deg, #1a001f, #0d0014);
+      padding: 20px;
+      border: 4px solid #bb00ff;
+      box-shadow: 0 0 10px #bb00ff;
+      border-radius: 12px;
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #bb00ff;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px #d633ff;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #bb00ff;
+      margin-bottom: 10px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .option input {
+      margin-right: 10px;
+      transform: scale(1.2);
+      accent-color: #bb00ff;
+    }
+
+    .slider-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin: 8px 0;
+    }
+
+    .slider {
+      flex: 1;
+      accent-color: #bb00ff;
+      height: 4px;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(187, 0, 255, 0.8);
+    }
+
+    .dropdown {
+      width: 100%;
+      padding: 10px;
+      background: #0d0014;
+      border: 1px solid #bb00ff;
+      color: white;
+      border-radius: 6px;
+      margin: 8px 0;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    h4 {
+      font-size: 16px;
+      margin-top: 10px;
+      color: #bb00ff;
+    }
+
+    .radio-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .radio-container label {
+      font-size: 14px;
+      font-weight: bold;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+      border: 2px solid #bb00ff;
+      cursor: pointer;
+    }
+
+    .radio-container input:checked + label {
+      background: #bb00ff;
+      color: black;
+      box-shadow: 0 0 8px #bb00ff;
+    }
+
+    .button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #3a0066, #1a0033);
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+      box-shadow: 0 0 10px #bb00ff;
+      transition: 0.3s ease-in-out;
+      font-size: 14px;
+    }
+
+    .button:hover {
+      background: linear-gradient(135deg, #6600cc, #330066);
+      box-shadow: 0 0 15px #d633ff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>AUXÍLIO DO BARBOZA STORE</h2>
+    <h3></h3>
+
+    <div class="option">
+      <input type="checkbox" id="aimtrigger">
+      <label for="aimtrigger">AimTrigger</label>
+    </div>
+
+    <div class="option">
+      <input type="checkbox" id="aimbot">
+      <label for="aimbot">Aimbot</label>
+    </div>
+
+    <div class="option">
+      <input type="checkbox" id="aimneck">
+      <label for="aimneck">Aimneck</label>
+    </div>
+
+    <div class="slider-container">
+      <input type="range" id="fovRange" class="slider" min="1" max="10" value="5">
+      <span id="fovValue">Fov 5</span>
+    </div>
+
+    <div class="slider-container">
+      <input type="range" id="trickHeadRange" class="slider" min="1" max="100" value="50">
+      <span id="trickHeadValue">Trick Head 50</span>
+    </div>
+
+    <select class="dropdown" id="auxilioType">
+      <option>Auxilio Head</option>
+      <option>Auxilio Sensi</option>
+      <option>Auxilio Total</option>
+    </select>
+
+    <h4>Tipo de Auxílio:</h4>
+
+    <div class="radio-container">
+      <input type="checkbox" id="recuo">
+      <label for="recuo">Auxílio Recuo</label>
+      <input type="checkbox" id="scope">
+      <label for="scope">Auxílio Scope</label>
+    </div>
+
+    <button class="button" id="injectButton" onclick="ativarFuncoes()">INJECT FREE FIRE FILES</button>
+  </div>
+
+  <script>
+    document.getElementById("fovRange").addEventListener("input", function () {
+      document.getElementById("fovValue").textContent = "Fov " + this.value;
+    });
+
+    document.getElementById("trickHeadRange").addEventListener("input", function () {
+      document.getElementById("trickHeadValue").textContent = "Trick Head " + this.value;
+    });
+
+    function ativarFuncoes() {
+      let botao = document.getElementById("injectButton");
+      botao.textContent = "INJETANDO...";
+      botao.disabled = true;
+      setTimeout(() => {
+        botao.textContent = "INJETADO!";
+        setTimeout(() => {
+          botao.textContent = "INJECT FREE FIRE FILES";
+          botao.disabled = false;
+        }, 2000);
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
